@@ -7,6 +7,8 @@ public class JSONReader : MonoBehaviour
     public TextAsset textJSON;
     public GameObject objectPrefab;
     public GameObject numberLabel;
+    public ClickRegister clickRegister;
+    private int currentLevel = 1;
 
     [System.Serializable]
     public class Level
@@ -56,14 +58,20 @@ public class JSONReader : MonoBehaviour
             }
         }
 
-       
-            for (int i = 0; i < levelList.levels[0].level_data.Length; i++)
+        clickRegister.SetPointsCount(levelList.levels[currentLevel].xCoordinates.Length);
+
+            for (int i = 0; i < levelList.levels[currentLevel].xCoordinates.Length; i++)
             {
                 
-                Vector3 spawnPosition = new Vector3(ConvertToUnityX(levelList.levels[0].xCoordinates[i]), ConvertToUnityY(levelList.levels[0].yCoordinates[i])); 
+                Vector3 spawnPosition = new Vector3(ConvertToUnityX(levelList.levels[currentLevel].xCoordinates[i]), ConvertToUnityY(levelList.levels[currentLevel].yCoordinates[i])); 
+                
 
                 // Instantiate object at calculated position
                 GameObject newObject = Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
+                newObject.GetComponent<PointLabel>().SetLabel(i + 1);
+               
+
+               
             }
         
     }
@@ -73,4 +81,5 @@ public class JSONReader : MonoBehaviour
     {
 
     }
+    
 }

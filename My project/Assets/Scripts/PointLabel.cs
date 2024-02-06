@@ -10,7 +10,14 @@ public class PointLabel : MonoBehaviour
 
     public void SetLabel(float number)
     {
+        Debug.Log("PASIEKIAU");
         numberLabel.text = number.ToString();
+        //numberLabel.text = number.ToString();
+        //Instantiate(numberLabel, spawnPosition, Quaternion.identity);
+    }
+    public TMP_Text GetLabel()
+    {
+        return numberLabel;
     }
 
 }
