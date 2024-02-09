@@ -6,18 +6,19 @@ public class SoundSystem : MonoBehaviour
 {
     private AudioSource finish;
     private AudioSource transferGem;
-    
+    private AudioSource background;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         
         finish = GetComponent<AudioSource>();
-        transferGem = GetComponents<AudioSource>()[1]; 
+        transferGem = GetComponents<AudioSource>()[1];
+        background = GetComponents<AudioSource>()[2];
 
     }
 
-    // Properties to access private variables
+    
     public AudioSource Finish
     {
         get { return finish; }
@@ -26,6 +27,9 @@ public class SoundSystem : MonoBehaviour
     {
         get { return transferGem; }
     }
-
+    public AudioSource Background
+    {
+        get { return background; }
+    }
 
 }

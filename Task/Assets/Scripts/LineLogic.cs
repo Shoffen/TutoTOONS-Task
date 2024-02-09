@@ -7,7 +7,7 @@ public class LineLogic : MonoBehaviour
     public Sprite spriteToAssign;
     private List<LineRenderer> lineList;
     public GameObject linePrefab;
-    public float animationDuration = 1f; // Duration of the animation in second
+    public float animationDuration = 0.1f; 
     private Queue<Vector3> pointsQueue = new Queue<Vector3>();
     private bool isDrawing = false;
     private int count;
@@ -33,7 +33,8 @@ public class LineLogic : MonoBehaviour
     {
         if((lineList.Count + 1) == clickRegister.maxSize)
         {
-            soundSystem.Finish.volume = PlayerPrefs.GetFloat("SoundVolume");
+           
+            //soundSystem.Finish.volume = PlayerPrefs.GetFloat("SoundVolume");
             soundSystem.Finish.Play();
             /*if (reader.currentLevel != reader.levelList.levels.Length - 1)
             {
@@ -105,9 +106,9 @@ public class LineLogic : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < duration)
+        while (elapsedTime < 0.5f)
         {
-            float t = elapsedTime / duration;
+            float t = elapsedTime / 0.5f;
             Vector3 currentPoint = Vector3.Lerp(startPoint, endPoint, t);
             newLine.SetPosition(0, startPoint);
             newLine.SetPosition(1, currentPoint);
@@ -115,7 +116,7 @@ public class LineLogic : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the line ends at the final position
+        
         newLine.SetPosition(1, endPoint);
         isDrawing = false;
     }

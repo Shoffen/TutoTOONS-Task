@@ -97,7 +97,7 @@ public class JSONReader : MonoBehaviour
 
             Vector3 spawnPosition = new Vector3(ConvertToUnityX(levelList.levels[(int)currentLevel].xCoordinates[i]), ConvertToUnityY(levelList.levels[(int)currentLevel].yCoordinates[i]), 0f);
 
-            Vector3 desiredScale = new Vector3(scaleCoeff, scaleCoeff, scaleCoeff); // Example scale values
+            Vector3 desiredScale = new Vector3(scaleCoeff, scaleCoeff, scaleCoeff); 
             GameObject spawnedPoint = Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
             spawnedPoint.transform.SetParent(mainCanva.transform);
             spawnPoint.Add(spawnedPoint);
@@ -110,7 +110,7 @@ public class JSONReader : MonoBehaviour
 
     }
     
-    // Update is called once per frame
+   
     void Update()
     {
         
@@ -188,7 +188,7 @@ public class JSONReader : MonoBehaviour
 
 
 
-            // Instantiate object at calculated position
+            
             
             Vector3 desiredScale = new Vector3(scaleCoeff, scaleCoeff, scaleCoeff); // Example scale values
             GameObject spawnedPoint = Instantiate(objectPrefab, spawnPosition, Quaternion.identity);

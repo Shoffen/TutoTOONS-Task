@@ -1553,6 +1553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 8363922537125974094, guid: 8328b233d9d22f145887b14fb1bacb90, type: 3}
+      propertyPath: m_Volume
+      value: 0.082
+      objectReference: {fileID: 0}
     - target: {fileID: 8363922537125974192, guid: 8328b233d9d22f145887b14fb1bacb90, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1596,6 +1600,10 @@ PrefabInstance:
     - target: {fileID: 8363922537125974192, guid: 8328b233d9d22f145887b14fb1bacb90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363922537125974194, guid: 8328b233d9d22f145887b14fb1bacb90, type: 3}
+      propertyPath: m_Volume
+      value: 0.089
       objectReference: {fileID: 0}
     - target: {fileID: 8363922537125974194, guid: 8328b233d9d22f145887b14fb1bacb90, type: 3}
       propertyPath: m_Enabled
